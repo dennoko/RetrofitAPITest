@@ -1,9 +1,11 @@
 package com.example.retrofitapitest
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
         // Retrofit Initialization
         val contentType = "application/json".toMediaType()
         val retrofit = Retrofit.Builder()
-            .baseUrl("android-kotlin-fun-mars-server.appspot.com")
+            .baseUrl("https://android-kotlin-fun-mars-server.appspot.com")
             .addConverterFactory(Json.asConverterFactory(contentType)) // Use Kotlinx Serialization Converter
             .build()
 
